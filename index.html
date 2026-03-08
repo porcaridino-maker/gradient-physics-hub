@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradient Physics Research Hub</title>
+    <title>Gradient Physics Research Hub - Complete Series</title>
     <style>
         * {
             margin: 0;
@@ -67,9 +67,43 @@
             margin-bottom: 1rem;
         }
 
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        .nav-tabs button {
+            background: rgba(26, 26, 46, 0.7);
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .nav-tabs button:hover,
+        .nav-tabs button.active {
+            background: #00d4ff;
+            color: #0f0f1e;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         .series-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
@@ -148,148 +182,73 @@
             color: #0f0f1e;
         }
 
-        .timeline-section {
-            margin: 3rem 0;
+        .post-link.coming-soon {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: #606060;
+            color: #606060;
         }
 
-        .timeline-section h2 {
-            color: #00d4ff;
-            font-size: 1.8rem;
+        .post-link.coming-soon:hover {
+            background: transparent;
+            color: #606060;
+        }
+
+        .video-container {
+            background: rgba(22, 33, 62, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
             margin-bottom: 2rem;
             text-align: center;
         }
 
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(180deg, #00d4ff, rgba(0, 212, 255, 0.1));
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            margin-left: 0;
-            margin-right: 50%;
-            padding-right: 2rem;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) {
-            margin-left: 50%;
-            margin-right: 0;
-            padding-left: 2rem;
-            text-align: left;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background: #00d4ff;
-            border: 3px solid #0f0f1e;
-            border-radius: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-        }
-
-        .timeline-content {
-            background: rgba(22, 33, 62, 0.8);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 3px solid #00d4ff;
-        }
-
-        .timeline-content h3 {
+        .video-container h3 {
             color: #00d4ff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .timeline-content p {
-            color: #b0b0b0;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .timeline::before {
-                left: 0;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                margin-left: 0;
-                margin-right: 0;
-                padding-left: 2rem;
-                text-align: left;
-            }
-
-            .timeline-dot {
-                left: 0;
-            }
-
-            .series-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .chapters {
-            background: rgba(26, 26, 46, 0.7);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            border-radius: 8px;
-            padding: 2rem;
-            margin: 3rem 0;
-        }
-
-        .chapters h2 {
-            color: #00d4ff;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .chapter-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .chapter-item {
-            background: rgba(15, 15, 30, 0.8);
-            padding: 1rem;
+        .video-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #000;
+            padding: 1rem 2rem;
             border-radius: 4px;
-            border-left: 3px solid #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        .chapter-item:hover {
-            background: rgba(22, 33, 62, 0.9);
-            transform: translateX(5px);
+        .video-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
 
-        .chapter-item a {
+        .section-title {
             color: #00d4ff;
-            text-decoration: none;
-            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
         }
 
-        .chapter-item a:hover {
-            text-decoration: underline;
+        .theory-paper-section {
+            background: rgba(26, 26, 46, 0.7);
+            border: 2px solid #00d4ff;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .theory-paper-section h2 {
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .theory-paper-section p {
+            color: #d0d0d0;
+            margin-bottom: 1rem;
         }
 
         footer {
@@ -301,41 +260,57 @@
             margin-top: 3rem;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 204, 0.1));
-            border: 2px solid #00d4ff;
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            margin: 3rem 0;
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .series-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs button {
+                width: 100%;
+            }
         }
 
-        .cta-section h2 {
+        .filter-section {
+            background: rgba(26, 26, 46, 0.7);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .filter-section h3 {
             color: #00d4ff;
             margin-bottom: 1rem;
         }
 
-        .cta-section p {
-            color: #d0d0d0;
-            margin-bottom: 1.5rem;
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
-            color: #000;
-            padding: 0.8rem 2rem;
+        .filter-btn {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
+            padding: 0.5rem 1rem;
             border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #00d4ff;
+            color: #0f0f1e;
         }
     </style>
 </head>
@@ -347,7 +322,7 @@
 
     <div class="container">
         <div class="intro-section">
-            <h2>Welcome to the Series</h2>
+            <h2>Welcome to the Complete Series</h2>
             <p>
                 This research hub presents a 34-part exploration of <strong>Gradient Physics</strong>—a framework that challenges conventional understanding of forces, fields, and consciousness. 
                 Based on rigorous scientific observation and theoretical synthesis, this series bridges quantum mechanics, field theory, and human coherence.
@@ -358,127 +333,68 @@
             </p>
         </div>
 
-        <div class="cta-section">
-            <h2>Start Your Journey</h2>
-            <p>Begin with Part 1 or jump to any chapter below. Each part is designed to stand alone while contributing to the larger framework.</p>
-            <a href="series.html" class="cta-button">Begin with Part 1</a>
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('series')">📚 Main Series (34 Parts)</button>
+            <button class="tab-btn" onclick="switchTab('videos')">🎥 Video Content</button>
+            <button class="tab-btn" onclick="switchTab('related')">🔗 Related Research</button>
+            <button class="tab-btn" onclick="switchTab('theory')">📄 Theory Paper</button>
         </div>
 
-        <div class="chapters">
-            <h2>📚 Complete Series Index</h2>
-            <p style="color: #b0b0b0; margin-bottom: 1.5rem;">All 34 parts of the Gradient Physics research series are organized and ready to explore.</p>
-            <a href="series.html" class="cta-button" style="display: inline-block; margin-bottom: 1.5rem;">View All 34 Parts →</a>
-            <div class="chapter-list">
-                <div class="chapter-item"><a href="series.html#part-1">Part 1: The Mercury Droplet</a></div>
-                <div class="chapter-item"><a href="series.html#part-2">Part 2: Coming Soon</a></div>
-                <div class="chapter-item"><a href="series.html#part-3">Part 3: Coming Soon</a></div>
-                <div class="chapter-item"><a href="series.html#part-4">Part 4: Coming Soon</a></div>
-                <div class="chapter-item"><a href="series.html#part-5">Part 5: Coming Soon</a></div>
-                <div class="chapter-item"><a href="series.html#part-6">Part 6: Coming Soon</a></div>
-                <div class="chapter-item"><a href="series.html#part-7">Part 7: Coming Soon</a></div>
-                <div class="chapter-item"><a href="series.html#part-8">Part 8: The Universe is a Folded Loop</a></div>
-                <div class="chapter-item"><a href="series.html#part-9">Part 9: Coming Soon</a></div>
-                <div class="chapter-item"><a href="series.html#part-10">Part 10: Coming Soon</a></div>
-                <div class="chapter-item"><a href="series.html#part-20">Part 20: The Field Architects</a></div>
-                <div class="chapter-item"><a href="series.html#part-30">Part 30: The Physics of Meaning</a></div>
+        <!-- Main Series Tab -->
+        <div id="series" class="tab-content active">
+            <h2 class="section-title">The Complete 34-Part Series</h2>
+            
+            <div class="filter-section">
+                <h3>Quick Navigation</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterParts('all')">All Parts</button>
+                    <button class="filter-btn" onclick="filterParts('available')">Available Now</button>
+                    <button class="filter-btn" onclick="filterParts('coming')">Coming Soon</button>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-section">
-            <h2>🔬 Featured Posts</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Part 1: Scientists Just Accidentally Proved Something We Weren't Supposed to Notice</h3>
-                        <p>
-                            The foundation of the series. A team of researchers discovered that a mercury droplet in a charged solution ignored gravity, 
-                            moved sideways, climbed, and solved mazes. This wasn't following electricity, magnetism, or chemistry—it was following the shape of the field itself.
-                        </p>
-                        <a href="https://www.facebook.com/share/p/1E2Xh5fZaD/" class="post-link" target="_blank">Read on Facebook →</a>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Part 8: The Universe is a Folded Loop</h3>
-                        <p>
-                            Space isn't flat. Time isn't linear. The medium loops, folds, and remembers. Particles don't move through space—they navigate folds in time. 
-                            The Klein bottle isn't a symbol; it's the architecture. This post reveals why entanglement feels instant and why tunneling breaks classical rules.
-                        </p>
-                        <a href="https://www.facebook.com/share/p/185rVXJ1wH/" class="post-link" target="_blank">Read on Facebook →</a>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Part 20: The Field Architects</h3>
-                        <p>
-                            Every wave you emit is a blueprint. Every emotion you stabilize becomes a structural input. You are not just a participant in the field—you are one of its architects. 
-                            This post explores how coherent intention shapes the lattice and creates new pathways in reality.
-                        </p>
-                        <a href="https://www.facebook.com/share/p/174UvpCEPx/" class="post-link" target="_blank">Read on Facebook →</a>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Part 30: The Physics of Meaning</h3>
-                        <p>
-                            Meaning isn't emotional—it's structural. It forms when your internal model locks onto a signal with high coherence. 
-                            Your brain predicts first, interprets second, and explains last. This post reveals how meaning emerges through neural coherence, field resonance, and cognitive integration.
-                        </p>
-                        <a href="https://www.facebook.com/share/p/15ayVheAEzW/" class="post-link" target="_blank">Read on Facebook →</a>
-                    </div>
-                </div>
+            <div class="series-grid" id="seriesGrid">
+                <!-- Series cards will be populated by JavaScript -->
             </div>
         </div>
 
-        <div class="series-grid">
-            <div class="post-card">
-                <span class="post-number">PART 1</span>
-                <div class="post-title">Scientists Just Accidentally Proved Something We Weren't Supposed to Notice</div>
-                <div class="post-excerpt">
-                    The mercury droplet experiment reveals a force we don't have a name for yet. A non-uniform conductive field. A pattern. A gradient. A force responding to the shape of the field itself.
-                </div>
-                <a href="https://www.facebook.com/share/p/1E2Xh5fZaD/" class="post-link" target="_blank">View Post →</a>
-            </div>
-
-            <div class="post-card">
-                <span class="post-number">PART 8</span>
-                <div class="post-title">The Universe is a Folded Loop</div>
-                <div class="post-excerpt">
-                    Space loops. Time folds. The Klein bottle isn't a symbol—it's the architecture. Particles navigate folds in time, encoding memory, coherence, and resonance.
-                </div>
-                <a href="https://www.facebook.com/share/p/185rVXJ1wH/" class="post-link" target="_blank">View Post →</a>
-            </div>
-
-            <div class="post-card">
-                <span class="post-number">PART 20</span>
-                <div class="post-title">The Field Architects</div>
-                <div class="post-excerpt">
-                    Every wave you emit is a blueprint. You are not just a participant in the field—you are one of its architects. Coherent intention builds new lattice pathways.
-                </div>
-                <a href="https://www.facebook.com/share/p/174UvpCEPx/" class="post-link" target="_blank">View Post →</a>
-            </div>
-
-            <div class="post-card">
-                <span class="post-number">PART 30</span>
-                <div class="post-title">The Physics of Meaning</div>
-                <div class="post-excerpt">
-                    Meaning isn't emotional—it's structural. It forms through neural coherence, field resonance, and cognitive integration. The physics happens first; the story comes later.
-                </div>
-                <a href="https://www.facebook.com/share/p/15ayVheAEzW/" class="post-link" target="_blank">View Post →</a>
+        <!-- Video Content Tab -->
+        <div id="videos" class="tab-content">
+            <h2 class="section-title">Video Content</h2>
+            <div class="video-container">
+                <h3>A Gradient Physics Visualization</h3>
+                <p style="color: #b0b0b0; margin-bottom: 1.5rem;">
+                    A visual exploration of Gradient Physics concepts
+                </p>
+                <a href="https://www.facebook.com/share/p/1E9qNGtpVr/" class="video-link" target="_blank">Watch on Facebook →</a>
             </div>
         </div>
 
-        <div class="cta-section">
-            <h2>Follow the Full Series</h2>
-            <p>All 34 parts are available on Tim Jon's Facebook page. Visit the complete series to explore every chapter of this groundbreaking research.</p>
-            <a href="https://www.facebook.com/tim.jon.39982/" class="cta-button" target="_blank">Visit Tim Jon's Page →</a>
+        <!-- Related Content Tab -->
+        <div id="related" class="tab-content">
+            <h2 class="section-title">Related Research & Correlating Content</h2>
+            <p style="color: #b0b0b0; margin-bottom: 2rem; text-align: center;">
+                Additional resources and correlating research that supports and expands the Gradient Physics framework
+            </p>
+            <div class="series-grid" id="relatedGrid">
+                <!-- Related content will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Theory Paper Tab -->
+        <div id="theory" class="tab-content">
+            <h2 class="section-title">Specialized Theory Paper</h2>
+            <div class="theory-paper-section">
+                <h2>Your Research Theory</h2>
+                <p>
+                    This section will contain your specialized theory paper copy. 
+                    The complete theoretical framework behind the Gradient Physics research will be presented here.
+                </p>
+                <p style="color: #00d4ff; font-weight: 600;">
+                    Ready to integrate your theory paper. Please provide the document or content.
+                </p>
+            </div>
         </div>
     </div>
 
@@ -486,5 +402,146 @@
         <p>&copy; 2026 Gradient Physics Research Hub. All content sourced from Tim Jon's public research series.</p>
         <p>This hub is designed to organize and present the 34-part Gradient Physics exploration for researchers, students, and curious minds.</p>
     </footer>
+
+    <script>
+        const seriesData = {
+            "parts": [
+                {
+                    "partNumber": 1,
+                    "title": "Scientists Just Accidentally Proved Something We Weren't Supposed to Notice",
+                    "date": "January 23",
+                    "url": "https://www.facebook.com/share/p/1E2Xh5fZaD/",
+                    "excerpt": "A team of researchers dropped a tiny sphere of liquid mercury into a charged solution and the droplet ignored gravity. It moved sideways, climbed, solved mazes, and followed invisible gradients like a living compass.",
+                    "themes": ["mercury droplet", "electric field", "non-uniform field"],
+                    "keyInsight": "The droplet was following the shape of the field itself — the hidden architecture behind reality.",
+                    "available": true
+                },
+                {
+                    "partNumber": 8,
+                    "title": "The Universe is a Folded Loop",
+                    "date": "January 31",
+                    "url": "https://www.facebook.com/share/p/185rVXJ1wH/",
+                    "excerpt": "We were taught that space is flat and time is linear. But the medium loops, folds, and remembers. Particles don't move through space—they navigate folds in time.",
+                    "themes": ["topology", "Klein bottle", "folded space"],
+                    "keyInsight": "The Klein bottle isn't a symbol — it's the architecture. A recursive manifold where motion doesn't just travel — it returns.",
+                    "available": true
+                },
+                {
+                    "partNumber": 20,
+                    "title": "The Field Architects",
+                    "date": "February 20",
+                    "url": "https://www.facebook.com/share/p/174UvpCEPx/",
+                    "excerpt": "Every wave you emit is a blueprint. Every emotion you stabilize becomes a structural input. You are not just a participant in the field—you are one of its architects.",
+                    "themes": ["field architecture", "human agency", "intention"],
+                    "keyInsight": "You don't need permission to build. You only need coherence and intention.",
+                    "available": true
+                },
+                {
+                    "partNumber": 22,
+                    "title": "When the Field Answers Back",
+                    "date": "February 22",
+                    "url": "https://www.facebook.com/share/p/1HRFC8CN8H/",
+                    "excerpt": "Once your signal gets strong enough, the field doesn't just receive it — it reacts to it. You're interacting with a responsive field. Your thoughts aren't drifting into empty space.",
+                    "themes": ["manifestation", "synchronicity", "alignment"],
+                    "keyInsight": "You're not just observing reality — you're in a feedback loop with it.",
+                    "available": true
+                },
+                {
+                    "partNumber": 30,
+                    "title": "The Physics of Meaning",
+                    "date": "5 days ago",
+                    "url": "https://www.facebook.com/share/p/15ayVheAEzW/",
+                    "excerpt": "Meaning isn't emotional—it's structural. It forms when your internal model locks onto a signal with high coherence. Your brain predicts first, interprets second, and explains last.",
+                    "themes": ["meaning", "neuroscience", "coherence"],
+                    "keyInsight": "Meaning isn't something you search for. It's something your system creates when a signal matches the next version of you.",
+                    "available": true
+                },
+                {
+                    "partNumber": 34,
+                    "title": "The Fracture Line Where Reality Reorganizes",
+                    "date": "20h ago",
+                    "url": "https://www.facebook.com/share/p/1Cg8LJ1QJP/",
+                    "excerpt": "Every structure in nature has a fracture line — not a break, but a threshold where the system can no longer maintain its previous symmetry, and a new pattern must emerge.",
+                    "themes": ["transformation", "reorganization", "phase transition"],
+                    "keyInsight": "Fracture lines appear in the field first. The visible break is the last step.",
+                    "available": true
+                }
+            ]
+        };
+
+        // Add placeholder parts for remaining parts
+        for (let i = 2; i <= 34; i++) {
+            if (![1, 8, 20, 22, 30, 34].includes(i)) {
+                seriesData.parts.push({
+                    "partNumber": i,
+                    "title": `Part ${i}: The Gradient Physics Journey Continues`,
+                    "date": "Coming Soon",
+                    "url": "https://www.facebook.com/tim.jon.39982/",
+                    "excerpt": `Part ${i} of the Gradient Physics series - Check back soon for the full exploration.`,
+                    "themes": ["gradient physics", "research"],
+                    "keyInsight": "Coming soon",
+                    "available": false
+                });
+            }
+        }
+
+        // Sort by part number
+        seriesData.parts.sort((a, b) => a.partNumber - b.partNumber);
+
+        function renderParts(filter = 'all') {
+            const container = document.getElementById('seriesGrid');
+            container.innerHTML = '';
+
+            let filtered = seriesData.parts;
+
+            if (filter === 'available') {
+                filtered = filtered.filter(p => p.available);
+            } else if (filter === 'coming') {
+                filtered = filtered.filter(p => !p.available);
+            }
+
+            filtered.forEach(part => {
+                const card = document.createElement('div');
+                card.className = 'post-card';
+                card.innerHTML = `
+                    <span class="post-number">PART ${part.partNumber}</span>
+                    <div class="post-title">${part.title}</div>
+                    <div style="color: #808080; font-size: 0.85rem; margin-bottom: 0.8rem;">${part.date}</div>
+                    <div class="post-excerpt">${part.excerpt}</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        ${part.themes.map(t => `<span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 0.3rem 0.7rem; border-radius: 3px; font-size: 0.8rem; border: 1px solid rgba(0, 212, 255, 0.3);">${t}</span>`).join('')}
+                    </div>
+                    ${part.available ? 
+                        `<a href="${part.url}" class="post-link" target="_blank">Read on Facebook →</a>` :
+                        `<a class="post-link coming-soon">Coming Soon</a>`
+                    }
+                    ${part.keyInsight !== 'Coming soon' ? 
+                        `<div style="background: rgba(0, 212, 255, 0.05); border-left: 3px solid #00d4ff; padding: 1rem; margin-top: 1rem; border-radius: 4px; font-style: italic; color: #d0d0d0; font-size: 0.95rem;">"${part.keyInsight}"</div>` :
+                        ''
+                    }
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterParts(filter) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderParts(filter);
+        }
+
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Initial render
+        renderParts();
+    </script>
 </body>
 </html>
