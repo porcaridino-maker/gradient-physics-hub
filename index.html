@@ -21,10 +21,10 @@
 
         header {
             background: rgba(15, 15, 30, 0.95);
-            border-bottom: 2px solid #00d4ff;
+            border-bottom: 3px solid #00d4ff;
             padding: 3rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
         }
 
         header h1 {
@@ -103,7 +103,7 @@
 
         .series-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
@@ -182,16 +182,31 @@
             color: #0f0f1e;
         }
 
-        .post-link.coming-soon {
-            opacity: 0.5;
-            cursor: not-allowed;
-            border-color: #606060;
-            color: #606060;
+        .section-title {
+            color: #00d4ff;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
         }
 
-        .post-link.coming-soon:hover {
-            background: transparent;
-            color: #606060;
+        .theory-paper-section {
+            background: rgba(26, 26, 46, 0.7);
+            border: 2px solid #00d4ff;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .theory-paper-section h2 {
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .theory-paper-section p {
+            color: #d0d0d0;
+            margin-bottom: 1rem;
         }
 
         .video-container {
@@ -224,31 +239,47 @@
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
 
-        .section-title {
-            color: #00d4ff;
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
-        }
-
-        .theory-paper-section {
+        .all-links-section {
             background: rgba(26, 26, 46, 0.7);
-            border: 2px solid #00d4ff;
+            border: 1px solid rgba(0, 212, 255, 0.3);
             border-radius: 8px;
             padding: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
-        .theory-paper-section h2 {
+        .all-links-section h3 {
             color: #00d4ff;
             margin-bottom: 1rem;
         }
 
-        .theory-paper-section p {
-            color: #d0d0d0;
-            margin-bottom: 1rem;
+        .all-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-item {
+            background: rgba(15, 15, 30, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .link-item:hover {
+            border-color: #00d4ff;
+            background: rgba(15, 15, 30, 0.8);
+        }
+
+        .link-item a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .link-item a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -277,41 +308,6 @@
                 width: 100%;
             }
         }
-
-        .filter-section {
-            background: rgba(26, 26, 46, 0.7);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-        }
-
-        .filter-section h3 {
-            color: #00d4ff;
-            margin-bottom: 1rem;
-        }
-
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .filter-btn {
-            background: rgba(0, 212, 255, 0.1);
-            color: #00d4ff;
-            border: 1px solid #00d4ff;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: #00d4ff;
-            color: #0f0f1e;
-        }
     </style>
 </head>
 <body>
@@ -324,7 +320,7 @@
         <div class="intro-section">
             <h2>Welcome to the Complete Series</h2>
             <p>
-                This research hub presents a 34-part exploration of <strong>Gradient Physics</strong>—a framework that challenges conventional understanding of forces, fields, and consciousness. 
+                This research hub presents a comprehensive exploration of <strong>Gradient Physics</strong>—a framework that challenges conventional understanding of forces, fields, and consciousness. 
                 Based on rigorous scientific observation and theoretical synthesis, this series bridges quantum mechanics, field theory, and human coherence.
             </p>
             <p>
@@ -335,25 +331,15 @@
 
         <!-- Navigation Tabs -->
         <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab('series')">📚 Main Series (34 Parts)</button>
+            <button class="tab-btn active" onclick="switchTab('series')">📚 Main Series</button>
             <button class="tab-btn" onclick="switchTab('videos')">🎥 Video Content</button>
-            <button class="tab-btn" onclick="switchTab('related')">🔗 Related Research</button>
+            <button class="tab-btn" onclick="switchTab('all-links')">🔗 All Links</button>
             <button class="tab-btn" onclick="switchTab('theory')">📄 Theory Paper</button>
         </div>
 
         <!-- Main Series Tab -->
         <div id="series" class="tab-content active">
-            <h2 class="section-title">The Complete 34-Part Series</h2>
-            
-            <div class="filter-section">
-                <h3>Quick Navigation</h3>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" onclick="filterParts('all')">All Parts</button>
-                    <button class="filter-btn" onclick="filterParts('available')">Available Now</button>
-                    <button class="filter-btn" onclick="filterParts('coming')">Coming Soon</button>
-                </div>
-            </div>
-
+            <h2 class="section-title">The Gradient Physics Series</h2>
             <div class="series-grid" id="seriesGrid">
                 <!-- Series cards will be populated by JavaScript -->
             </div>
@@ -371,14 +357,17 @@
             </div>
         </div>
 
-        <!-- Related Content Tab -->
-        <div id="related" class="tab-content">
-            <h2 class="section-title">Related Research & Correlating Content</h2>
-            <p style="color: #b0b0b0; margin-bottom: 2rem; text-align: center;">
-                Additional resources and correlating research that supports and expands the Gradient Physics framework
-            </p>
-            <div class="series-grid" id="relatedGrid">
-                <!-- Related content will be populated by JavaScript -->
+        <!-- All Links Tab -->
+        <div id="all-links" class="tab-content">
+            <h2 class="section-title">Complete Link Collection (23 Posts)</h2>
+            <div class="all-links-section">
+                <h3>All Provided Facebook Links</h3>
+                <p style="color: #b0b0b0; margin-bottom: 1.5rem;">
+                    Here are all 23 links you provided. Click any to view the post on Facebook.
+                </p>
+                <div class="all-links-grid" id="allLinksGrid">
+                    <!-- All links will be populated by JavaScript -->
+                </div>
             </div>
         </div>
 
@@ -388,11 +377,11 @@
             <div class="theory-paper-section">
                 <h2>Your Research Theory</h2>
                 <p>
-                    This section will contain your specialized theory paper copy. 
+                    This section is ready to integrate your specialized theory paper copy. 
                     The complete theoretical framework behind the Gradient Physics research will be presented here.
                 </p>
-                <p style="color: #00d4ff; font-weight: 600;">
-                    Ready to integrate your theory paper. Please provide the document or content.
+                <p style="color: #00d4ff; font-weight: 600; margin-top: 1rem;">
+                    📝 Ready to add your theory paper. Please provide the document or content.
                 </p>
             </div>
         </div>
@@ -400,7 +389,7 @@
 
     <footer>
         <p>&copy; 2026 Gradient Physics Research Hub. All content sourced from Tim Jon's public research series.</p>
-        <p>This hub is designed to organize and present the 34-part Gradient Physics exploration for researchers, students, and curious minds.</p>
+        <p>This hub is designed to organize and present the Gradient Physics exploration for researchers, students, and curious minds.</p>
     </footer>
 
     <script>
@@ -409,139 +398,138 @@
                 {
                     "partNumber": 1,
                     "title": "Scientists Just Accidentally Proved Something We Weren't Supposed to Notice",
-                    "date": "January 23",
                     "url": "https://www.facebook.com/share/p/1E2Xh5fZaD/",
                     "excerpt": "A team of researchers dropped a tiny sphere of liquid mercury into a charged solution and the droplet ignored gravity. It moved sideways, climbed, solved mazes, and followed invisible gradients like a living compass.",
-                    "themes": ["mercury droplet", "electric field", "non-uniform field"],
-                    "keyInsight": "The droplet was following the shape of the field itself — the hidden architecture behind reality.",
                     "available": true
                 },
                 {
                     "partNumber": 8,
                     "title": "The Universe is a Folded Loop",
-                    "date": "January 31",
                     "url": "https://www.facebook.com/share/p/185rVXJ1wH/",
                     "excerpt": "We were taught that space is flat and time is linear. But the medium loops, folds, and remembers. Particles don't move through space—they navigate folds in time.",
-                    "themes": ["topology", "Klein bottle", "folded space"],
-                    "keyInsight": "The Klein bottle isn't a symbol — it's the architecture. A recursive manifold where motion doesn't just travel — it returns.",
                     "available": true
                 },
                 {
                     "partNumber": 20,
                     "title": "The Field Architects",
-                    "date": "February 20",
                     "url": "https://www.facebook.com/share/p/174UvpCEPx/",
                     "excerpt": "Every wave you emit is a blueprint. Every emotion you stabilize becomes a structural input. You are not just a participant in the field—you are one of its architects.",
-                    "themes": ["field architecture", "human agency", "intention"],
-                    "keyInsight": "You don't need permission to build. You only need coherence and intention.",
                     "available": true
                 },
                 {
                     "partNumber": 22,
                     "title": "When the Field Answers Back",
-                    "date": "February 22",
                     "url": "https://www.facebook.com/share/p/1HRFC8CN8H/",
                     "excerpt": "Once your signal gets strong enough, the field doesn't just receive it — it reacts to it. You're interacting with a responsive field. Your thoughts aren't drifting into empty space.",
-                    "themes": ["manifestation", "synchronicity", "alignment"],
-                    "keyInsight": "You're not just observing reality — you're in a feedback loop with it.",
                     "available": true
                 },
                 {
                     "partNumber": 30,
                     "title": "The Physics of Meaning",
-                    "date": "5 days ago",
                     "url": "https://www.facebook.com/share/p/15ayVheAEzW/",
                     "excerpt": "Meaning isn't emotional—it's structural. It forms when your internal model locks onto a signal with high coherence. Your brain predicts first, interprets second, and explains last.",
-                    "themes": ["meaning", "neuroscience", "coherence"],
-                    "keyInsight": "Meaning isn't something you search for. It's something your system creates when a signal matches the next version of you.",
+                    "available": true
+                },
+                {
+                    "partNumber": 31,
+                    "title": "The Resonance Before Thought",
+                    "url": "https://www.facebook.com/share/p/184iUjPyED/",
+                    "excerpt": "Meaning begins before thought — in the silent resonance your field detects before your mind forms the story. Interpretation is the echo, not the origin.",
+                    "available": true
+                },
+                {
+                    "partNumber": 32,
+                    "title": "The Architecture That Precedes Form",
+                    "url": "https://www.facebook.com/share/p/16ZqLTg4Tf/",
+                    "excerpt": "Before anything becomes matter, before anything becomes measurable, before anything becomes a particle, a neuron, a signal, or a thought — there is structure.",
+                    "available": true
+                },
+                {
+                    "partNumber": 33,
+                    "title": "The Blueprint That Builds Itself",
+                    "url": "https://www.facebook.com/share/p/1EBZVmz4F2/",
+                    "excerpt": "You're not living your past — you're living your pattern. And the pattern isn't stored in your brain. It's built into your field.",
                     "available": true
                 },
                 {
                     "partNumber": 34,
                     "title": "The Fracture Line Where Reality Reorganizes",
-                    "date": "20h ago",
                     "url": "https://www.facebook.com/share/p/1Cg8LJ1QJP/",
                     "excerpt": "Every structure in nature has a fracture line — not a break, but a threshold where the system can no longer maintain its previous symmetry, and a new pattern must emerge.",
-                    "themes": ["transformation", "reorganization", "phase transition"],
-                    "keyInsight": "Fracture lines appear in the field first. The visible break is the last step.",
                     "available": true
                 }
             ]
         };
 
-        // Add placeholder parts for remaining parts
-        for (let i = 2; i <= 34; i++) {
-            if (![1, 8, 20, 22, 30, 34].includes(i)) {
-                seriesData.parts.push({
-                    "partNumber": i,
-                    "title": `Part ${i}: The Gradient Physics Journey Continues`,
-                    "date": "Coming Soon",
-                    "url": "https://www.facebook.com/tim.jon.39982/",
-                    "excerpt": `Part ${i} of the Gradient Physics series - Check back soon for the full exploration.`,
-                    "themes": ["gradient physics", "research"],
-                    "keyInsight": "Coming soon",
-                    "available": false
-                });
-            }
-        }
+        const allProvidedLinks = [
+            "https://www.facebook.com/share/p/1HRFC8CN8H/",
+            "https://www.facebook.com/share/p/1Cg8LJ1QJP/",
+            "https://www.facebook.com/share/p/1EBZVmz4F2/",
+            "https://www.facebook.com/share/p/16ZqLTg4Tf/",
+            "https://www.facebook.com/share/p/184iUjPyED/",
+            "https://www.facebook.com/share/p/1HcUEZTzbT/",
+            "https://www.facebook.com/share/p/1CeEjZxVD6/",
+            "https://www.facebook.com/share/p/1Cc1iRqKxf/",
+            "https://www.facebook.com/share/p/1FLPn3MHpU/",
+            "https://www.facebook.com/share/p/1AhFTi9tpN/",
+            "https://www.facebook.com/share/p/1B4dk5nEYx/",
+            "https://www.facebook.com/share/p/1CHCeUkfrB/",
+            "https://www.facebook.com/share/p/16xZBuAzLS/",
+            "https://www.facebook.com/share/p/1Dem9GQk15/",
+            "https://www.facebook.com/share/p/1Ana8zMm9K/",
+            "https://www.facebook.com/share/p/1E9qNGtpVr/",
+            "https://www.facebook.com/share/p/18HVDv5vzb/",
+            "https://www.facebook.com/share/p/1B1yLhZc13/",
+            "https://www.facebook.com/share/p/1B8cXaxnp5/",
+            "https://www.facebook.com/share/p/1GEs2yjHPy/",
+            "https://www.facebook.com/share/p/1CRXddEVfT/",
+            "https://www.facebook.com/share/p/1CVX2UZXCX/",
+            "https://www.facebook.com/share/p/1D5mgT6dq8/"
+        ];
 
-        // Sort by part number
-        seriesData.parts.sort((a, b) => a.partNumber - b.partNumber);
-
-        function renderParts(filter = 'all') {
+        function renderSeries() {
             const container = document.getElementById('seriesGrid');
             container.innerHTML = '';
 
-            let filtered = seriesData.parts;
-
-            if (filter === 'available') {
-                filtered = filtered.filter(p => p.available);
-            } else if (filter === 'coming') {
-                filtered = filtered.filter(p => !p.available);
-            }
-
-            filtered.forEach(part => {
+            seriesData.parts.forEach(part => {
                 const card = document.createElement('div');
                 card.className = 'post-card';
                 card.innerHTML = `
                     <span class="post-number">PART ${part.partNumber}</span>
                     <div class="post-title">${part.title}</div>
-                    <div style="color: #808080; font-size: 0.85rem; margin-bottom: 0.8rem;">${part.date}</div>
                     <div class="post-excerpt">${part.excerpt}</div>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                        ${part.themes.map(t => `<span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 0.3rem 0.7rem; border-radius: 3px; font-size: 0.8rem; border: 1px solid rgba(0, 212, 255, 0.3);">${t}</span>`).join('')}
-                    </div>
-                    ${part.available ? 
-                        `<a href="${part.url}" class="post-link" target="_blank">Read on Facebook →</a>` :
-                        `<a class="post-link coming-soon">Coming Soon</a>`
-                    }
-                    ${part.keyInsight !== 'Coming soon' ? 
-                        `<div style="background: rgba(0, 212, 255, 0.05); border-left: 3px solid #00d4ff; padding: 1rem; margin-top: 1rem; border-radius: 4px; font-style: italic; color: #d0d0d0; font-size: 0.95rem;">"${part.keyInsight}"</div>` :
-                        ''
-                    }
+                    <a href="${part.url}" class="post-link" target="_blank">Read on Facebook →</a>
                 `;
                 container.appendChild(card);
             });
         }
 
-        function filterParts(filter) {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            renderParts(filter);
+        function renderAllLinks() {
+            const container = document.getElementById('allLinksGrid');
+            container.innerHTML = '';
+
+            allProvidedLinks.forEach((link, index) => {
+                const item = document.createElement('div');
+                item.className = 'link-item';
+                item.innerHTML = `
+                    <strong>Link ${index + 1}</strong><br>
+                    <a href="${link}" target="_blank">Open on Facebook →</a>
+                `;
+                container.appendChild(item);
+            });
         }
 
         function switchTab(tabName) {
-            // Hide all tabs
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             
-            // Show selected tab
             document.getElementById(tabName).classList.add('active');
             event.target.classList.add('active');
         }
 
         // Initial render
-        renderParts();
+        renderSeries();
+        renderAllLinks();
     </script>
 </body>
 </html>
