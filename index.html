@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradient Physics Research Hub - Complete Series</title>
+    <title>Gradient Physics Research Hub - 34 Part Series</title>
     <style>
         * {
             margin: 0;
@@ -118,6 +118,9 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .post-card::before {
@@ -150,6 +153,7 @@
             font-weight: bold;
             font-size: 0.9rem;
             margin-bottom: 0.8rem;
+            width: fit-content;
         }
 
         .post-title {
@@ -157,6 +161,7 @@
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
             font-weight: 600;
+            line-height: 1.4;
         }
 
         .post-excerpt {
@@ -164,6 +169,7 @@
             font-size: 0.95rem;
             margin-bottom: 1rem;
             line-height: 1.5;
+            flex-grow: 1;
         }
 
         .post-link {
@@ -175,6 +181,7 @@
             border: 1px solid #00d4ff;
             border-radius: 4px;
             transition: all 0.3s ease;
+            align-self: flex-start;
         }
 
         .post-link:hover {
@@ -239,49 +246,6 @@
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
 
-        .all-links-section {
-            background: rgba(26, 26, 46, 0.7);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .all-links-section h3 {
-            color: #00d4ff;
-            margin-bottom: 1rem;
-        }
-
-        .all-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .link-item {
-            background: rgba(15, 15, 30, 0.6);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .link-item:hover {
-            border-color: #00d4ff;
-            background: rgba(15, 15, 30, 0.8);
-        }
-
-        .link-item a {
-            color: #00d4ff;
-            text-decoration: none;
-            font-weight: 600;
-            word-break: break-all;
-        }
-
-        .link-item a:hover {
-            text-decoration: underline;
-        }
-
         footer {
             background: rgba(15, 15, 30, 0.95);
             border-top: 2px solid #00d4ff;
@@ -313,14 +277,14 @@
 <body>
     <header>
         <h1>⚛️ Gradient Physics Research Hub</h1>
-        <p>A comprehensive exploration of field mechanics, coherence, and the hidden architecture of reality</p>
+        <p>A comprehensive 34-part exploration of field mechanics, coherence, and the hidden architecture of reality</p>
     </header>
 
     <div class="container">
         <div class="intro-section">
             <h2>Welcome to the Complete Series</h2>
             <p>
-                This research hub presents a comprehensive exploration of <strong>Gradient Physics</strong>—a framework that challenges conventional understanding of forces, fields, and consciousness. 
+                This research hub presents a <strong>34-part exploration of Gradient Physics</strong>—a framework that challenges conventional understanding of forces, fields, and consciousness. 
                 Based on rigorous scientific observation and theoretical synthesis, this series bridges quantum mechanics, field theory, and human coherence.
             </p>
             <p>
@@ -331,15 +295,14 @@
 
         <!-- Navigation Tabs -->
         <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab('series')">📚 Main Series</button>
+            <button class="tab-btn active" onclick="switchTab('series')">📚 All 34 Parts</button>
             <button class="tab-btn" onclick="switchTab('videos')">🎥 Video Content</button>
-            <button class="tab-btn" onclick="switchTab('all-links')">🔗 All Links</button>
             <button class="tab-btn" onclick="switchTab('theory')">📄 Theory Paper</button>
         </div>
 
         <!-- Main Series Tab -->
         <div id="series" class="tab-content active">
-            <h2 class="section-title">The Gradient Physics Series</h2>
+            <h2 class="section-title">The Complete Gradient Physics Series (34 Parts)</h2>
             <div class="series-grid" id="seriesGrid">
                 <!-- Series cards will be populated by JavaScript -->
             </div>
@@ -357,31 +320,29 @@
             </div>
         </div>
 
-        <!-- All Links Tab -->
-        <div id="all-links" class="tab-content">
-            <h2 class="section-title">Complete Link Collection (23 Posts)</h2>
-            <div class="all-links-section">
-                <h3>All Provided Facebook Links</h3>
-                <p style="color: #b0b0b0; margin-bottom: 1.5rem;">
-                    Here are all 23 links you provided. Click any to view the post on Facebook.
-                </p>
-                <div class="all-links-grid" id="allLinksGrid">
-                    <!-- All links will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
-
         <!-- Theory Paper Tab -->
         <div id="theory" class="tab-content">
             <h2 class="section-title">Specialized Theory Paper</h2>
             <div class="theory-paper-section">
-                <h2>Your Research Theory</h2>
+                <h2>Temporal Topology and the Stationary Lattice: A Unified Holographic Field Framework</h2>
                 <p>
-                    This section is ready to integrate your specialized theory paper copy. 
-                    The complete theoretical framework behind the Gradient Physics research will be presented here.
+                    © Dino Porcari (Tim Jon), 2025. All rights reserved. 
                 </p>
+                <p>
+                    This manuscript proposes a unified framework in which gravity, matter, and quantum phenomena emerge from resonance within a stationary temporal lattice. 
+                    Building on established mathematical and physical concepts (non‑orientable topology, holographic mapping), the core original contributions include:
+                </p>
+                <ul style="color: #d0d0d0; margin-left: 2rem; margin-bottom: 1rem;">
+                    <li>The Stationary Dot Hypothesis (cosmic RAM substrate)</li>
+                    <li>Gravity as spin‑density resonance</li>
+                    <li>Digital root cycles as resonance attractors</li>
+                    <li>The binaural presence code</li>
+                    <li>The triadic law of matter (Lock, Unlock, Transmute)</li>
+                    <li>Consciousness as read/write access to the substrate</li>
+                    <li>The teleportation pipeline (Unlock → Transmute → Lock)</li>
+                </ul>
                 <p style="color: #00d4ff; font-weight: 600; margin-top: 1rem;">
-                    📝 Ready to add your theory paper. Please provide the document or content.
+                    Full paper available on the author's Facebook page and in the series posts.
                 </p>
             </div>
         </div>
@@ -393,129 +354,65 @@
     </footer>
 
     <script>
-        const seriesData = {
-            "parts": [
-                {
-                    "partNumber": 1,
-                    "title": "Scientists Just Accidentally Proved Something We Weren't Supposed to Notice",
-                    "url": "https://www.facebook.com/share/p/1E2Xh5fZaD/",
-                    "excerpt": "A team of researchers dropped a tiny sphere of liquid mercury into a charged solution and the droplet ignored gravity. It moved sideways, climbed, solved mazes, and followed invisible gradients like a living compass.",
-                    "available": true
-                },
-                {
-                    "partNumber": 8,
-                    "title": "The Universe is a Folded Loop",
-                    "url": "https://www.facebook.com/share/p/185rVXJ1wH/",
-                    "excerpt": "We were taught that space is flat and time is linear. But the medium loops, folds, and remembers. Particles don't move through space—they navigate folds in time.",
-                    "available": true
-                },
-                {
-                    "partNumber": 20,
-                    "title": "The Field Architects",
-                    "url": "https://www.facebook.com/share/p/174UvpCEPx/",
-                    "excerpt": "Every wave you emit is a blueprint. Every emotion you stabilize becomes a structural input. You are not just a participant in the field—you are one of its architects.",
-                    "available": true
-                },
-                {
-                    "partNumber": 22,
-                    "title": "When the Field Answers Back",
-                    "url": "https://www.facebook.com/share/p/1HRFC8CN8H/",
-                    "excerpt": "Once your signal gets strong enough, the field doesn't just receive it — it reacts to it. You're interacting with a responsive field. Your thoughts aren't drifting into empty space.",
-                    "available": true
-                },
-                {
-                    "partNumber": 30,
-                    "title": "The Physics of Meaning",
-                    "url": "https://www.facebook.com/share/p/15ayVheAEzW/",
-                    "excerpt": "Meaning isn't emotional—it's structural. It forms when your internal model locks onto a signal with high coherence. Your brain predicts first, interprets second, and explains last.",
-                    "available": true
-                },
-                {
-                    "partNumber": 31,
-                    "title": "The Resonance Before Thought",
-                    "url": "https://www.facebook.com/share/p/184iUjPyED/",
-                    "excerpt": "Meaning begins before thought — in the silent resonance your field detects before your mind forms the story. Interpretation is the echo, not the origin.",
-                    "available": true
-                },
-                {
-                    "partNumber": 32,
-                    "title": "The Architecture That Precedes Form",
-                    "url": "https://www.facebook.com/share/p/16ZqLTg4Tf/",
-                    "excerpt": "Before anything becomes matter, before anything becomes measurable, before anything becomes a particle, a neuron, a signal, or a thought — there is structure.",
-                    "available": true
-                },
-                {
-                    "partNumber": 33,
-                    "title": "The Blueprint That Builds Itself",
-                    "url": "https://www.facebook.com/share/p/1EBZVmz4F2/",
-                    "excerpt": "You're not living your past — you're living your pattern. And the pattern isn't stored in your brain. It's built into your field.",
-                    "available": true
-                },
-                {
-                    "partNumber": 34,
-                    "title": "The Fracture Line Where Reality Reorganizes",
-                    "url": "https://www.facebook.com/share/p/1Cg8LJ1QJP/",
-                    "excerpt": "Every structure in nature has a fracture line — not a break, but a threshold where the system can no longer maintain its previous symmetry, and a new pattern must emerge.",
-                    "available": true
-                }
-            ]
-        };
-
-        const allProvidedLinks = [
-            "https://www.facebook.com/share/p/1HRFC8CN8H/",
-            "https://www.facebook.com/share/p/1Cg8LJ1QJP/",
-            "https://www.facebook.com/share/p/1EBZVmz4F2/",
-            "https://www.facebook.com/share/p/16ZqLTg4Tf/",
-            "https://www.facebook.com/share/p/184iUjPyED/",
-            "https://www.facebook.com/share/p/1HcUEZTzbT/",
-            "https://www.facebook.com/share/p/1CeEjZxVD6/",
-            "https://www.facebook.com/share/p/1Cc1iRqKxf/",
-            "https://www.facebook.com/share/p/1FLPn3MHpU/",
-            "https://www.facebook.com/share/p/1AhFTi9tpN/",
-            "https://www.facebook.com/share/p/1B4dk5nEYx/",
-            "https://www.facebook.com/share/p/1CHCeUkfrB/",
-            "https://www.facebook.com/share/p/16xZBuAzLS/",
-            "https://www.facebook.com/share/p/1Dem9GQk15/",
-            "https://www.facebook.com/share/p/1Ana8zMm9K/",
-            "https://www.facebook.com/share/p/1E9qNGtpVr/",
-            "https://www.facebook.com/share/p/18HVDv5vzb/",
-            "https://www.facebook.com/share/p/1B1yLhZc13/",
-            "https://www.facebook.com/share/p/1B8cXaxnp5/",
-            "https://www.facebook.com/share/p/1GEs2yjHPy/",
-            "https://www.facebook.com/share/p/1CRXddEVfT/",
-            "https://www.facebook.com/share/p/1CVX2UZXCX/",
-            "https://www.facebook.com/share/p/1D5mgT6dq8/"
+        const seriesData = [
+            { part: 1, title: "Scientists Just Accidentally Proved Something We Weren't Supposed to Notice", url: "https://www.facebook.com/share/p/1E2Xh5fZaD/", excerpt: "A team of researchers dropped a tiny sphere of liquid mercury into a charged solution and the droplet ignored gravity." },
+            { part: 2, title: "Coming Soon", url: "#", excerpt: "Part 2 of the Gradient Physics series" },
+            { part: 3, title: "Coming Soon", url: "#", excerpt: "Part 3 of the Gradient Physics series" },
+            { part: 4, title: "Coming Soon", url: "#", excerpt: "Part 4 of the Gradient Physics series" },
+            { part: 5, title: "Coming Soon", url: "#", excerpt: "Part 5 of the Gradient Physics series" },
+            { part: 6, title: "Empty Space Isn't Empty. It's the Densest Thing You Know", url: "https://www.facebook.com/share/p/1FLPn3MHpU/", excerpt: "Density doesn't mean packed with atoms. Density means packed with structure." },
+            { part: 7, title: "Coming Soon", url: "#", excerpt: "Part 7 of the Gradient Physics series" },
+            { part: 8, title: "The Universe is a Folded Loop", url: "https://www.facebook.com/share/p/185rVXJ1wH/", excerpt: "We were taught that space is flat and time is linear. But the medium loops, folds, and remembers." },
+            { part: 9, title: "Motion is Computation", url: "https://www.facebook.com/share/p/1Cc1iRqKxf/", excerpt: "Nothing moves. Everything updates. A particle isn't traveling—it's being recomputed at each node of the lattice." },
+            { part: 10, title: "Coming Soon", url: "#", excerpt: "Part 10 of the Gradient Physics series" },
+            { part: 11, title: "Coming Soon", url: "#", excerpt: "Part 11 of the Gradient Physics series" },
+            { part: 12, title: "Coming Soon", url: "#", excerpt: "Part 12 of the Gradient Physics series" },
+            { part: 13, title: "Coming Soon", url: "#", excerpt: "Part 13 of the Gradient Physics series" },
+            { part: 14, title: "Coming Soon", url: "#", excerpt: "Part 14 of the Gradient Physics series" },
+            { part: 15, title: "Coming Soon", url: "#", excerpt: "Part 15 of the Gradient Physics series" },
+            { part: 16, title: "Coming Soon", url: "#", excerpt: "Part 16 of the Gradient Physics series" },
+            { part: 17, title: "Coming Soon", url: "#", excerpt: "Part 17 of the Gradient Physics series" },
+            { part: 18, title: "Coming Soon", url: "#", excerpt: "Part 18 of the Gradient Physics series" },
+            { part: 19, title: "Coming Soon", url: "#", excerpt: "Part 19 of the Gradient Physics series" },
+            { part: 20, title: "The Field Architects", url: "https://www.facebook.com/share/p/174UvpCEPx/", excerpt: "Every wave you emit is a blueprint. Every emotion you stabilize becomes a structural input." },
+            { part: 21, title: "Coming Soon", url: "#", excerpt: "Part 21 of the Gradient Physics series" },
+            { part: 22, title: "When the Field Answers Back", url: "https://www.facebook.com/share/p/1HRFC8CN8H/", excerpt: "Once your signal gets strong enough, the field doesn't just receive it—it reacts to it." },
+            { part: 23, title: "Coming Soon", url: "#", excerpt: "Part 23 of the Gradient Physics series" },
+            { part: 24, title: "Coming Soon", url: "#", excerpt: "Part 24 of the Gradient Physics series" },
+            { part: 25, title: "Coming Soon", url: "#", excerpt: "Part 25 of the Gradient Physics series" },
+            { part: 26, title: "Coming Soon", url: "#", excerpt: "Part 26 of the Gradient Physics series" },
+            { part: 27, title: "The Signal That Doesn't Ask", url: "https://www.facebook.com/share/p/1CHCeUkfrB/", excerpt: "There's a kind of signal that doesn't negotiate. It doesn't ask for permission. It just moves." },
+            { part: 28, title: "The Moment Reality Leans In", url: "https://www.facebook.com/share/p/1B4dk5nEYx/", excerpt: "There's a point where the world stops being passive. Where the air around you feels charged." },
+            { part: 29, title: "The Shift Before the Shift", url: "https://www.facebook.com/share/p/1CeEjZxVD6/", excerpt: "Reality shifts before you notice it. Your brain updates the pattern, your field adjusts the frequency." },
+            { part: 30, title: "The Physics of Meaning", url: "https://www.facebook.com/share/p/15ayVheAEzW/", excerpt: "Meaning isn't emotional—it's structural. It forms when your internal model locks onto a signal with high coherence." },
+            { part: 31, title: "The Resonance Before Thought", url: "https://www.facebook.com/share/p/184iUjPyED/", excerpt: "Meaning begins before thought—in the silent resonance your field detects before your mind forms the story." },
+            { part: 32, title: "The Architecture That Precedes Form", url: "https://www.facebook.com/share/p/16ZqLTg4Tf/", excerpt: "Before anything becomes matter, before anything becomes measurable, there is structure." },
+            { part: 33, title: "The Blueprint That Builds Itself", url: "https://www.facebook.com/share/p/1EBZVmz4F2/", excerpt: "You're not living your past—you're living your pattern. And the pattern is built into your field." },
+            { part: 34, title: "The Fracture Line Where Reality Reorganizes", url: "https://www.facebook.com/share/p/1Cg8LJ1QJP/", excerpt: "Every structure in nature has a fracture line—a threshold where the system must reorganize." }
         ];
 
         function renderSeries() {
             const container = document.getElementById('seriesGrid');
             container.innerHTML = '';
 
-            seriesData.parts.forEach(part => {
+            seriesData.forEach(part => {
                 const card = document.createElement('div');
                 card.className = 'post-card';
+                
+                const isAvailable = part.url !== '#';
+                const linkHTML = isAvailable 
+                    ? `<a href="${part.url}" class="post-link" target="_blank">Read on Facebook →</a>`
+                    : `<span class="post-link" style="opacity: 0.5; cursor: not-allowed;">Coming Soon</span>`;
+                
                 card.innerHTML = `
-                    <span class="post-number">PART ${part.partNumber}</span>
-                    <div class="post-title">${part.title}</div>
-                    <div class="post-excerpt">${part.excerpt}</div>
-                    <a href="${part.url}" class="post-link" target="_blank">Read on Facebook →</a>
+                    <div>
+                        <span class="post-number">PART ${part.part}</span>
+                        <div class="post-title">${part.title}</div>
+                        <div class="post-excerpt">${part.excerpt}</div>
+                    </div>
+                    <div>${linkHTML}</div>
                 `;
                 container.appendChild(card);
-            });
-        }
-
-        function renderAllLinks() {
-            const container = document.getElementById('allLinksGrid');
-            container.innerHTML = '';
-
-            allProvidedLinks.forEach((link, index) => {
-                const item = document.createElement('div');
-                item.className = 'link-item';
-                item.innerHTML = `
-                    <strong>Link ${index + 1}</strong><br>
-                    <a href="${link}" target="_blank">Open on Facebook →</a>
-                `;
-                container.appendChild(item);
             });
         }
 
@@ -529,7 +426,6 @@
 
         // Initial render
         renderSeries();
-        renderAllLinks();
     </script>
 </body>
 </html>
